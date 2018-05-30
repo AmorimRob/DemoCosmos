@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoCosmos.ClubPage"
+             Title="Xamarin Summit 2018">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Name"/>
+            <Entry Text="{Binding Club.Name}"/>
+            <Label Text="Country"/>
+            <Entry Text="{Binding Club.Country}"/>
+            
+            <Button Text="Save" Command="{Binding SaveCmd}" IsVisible="{Binding IsAdding}"/>
+            <Button Text="Update" Command="{Binding UpdateCmd}" IsVisible="{Binding IsUpdating}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
