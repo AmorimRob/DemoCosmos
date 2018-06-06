@@ -12,6 +12,13 @@ namespace DemoCosmos
 		public MainPage()
 		{
 			InitializeComponent();
-		}
-	}
+            BindingContext = new MainPageViewModel();
+        }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var club = e.SelectedItem as Club;
+            App.Current.MainPage.Navigation.PushAsync(new ClubPage(club));
+        }
+    }
 }
